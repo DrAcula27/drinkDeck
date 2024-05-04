@@ -1,3 +1,4 @@
+/* CSS reset */
 * {
   box-sizing: border-box;
 }
@@ -7,18 +8,20 @@ body {
   margin: 0;
 }
 
+/* Styles */
 .carousel {
   --current-slide: 0;
-  width: 100%;
   position: relative;
   overflow: hidden;
 }
 
 .carouselButton {
+  /* vertically center buttons */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
+  /* style buttons */
   padding: 0;
   margin: 0.5rem;
   border: none;
@@ -52,4 +55,34 @@ body {
     font-size: 2rem;
     margin: 1rem;
   }
+}
+
+/* styling slide images */
+.content {
+  width: 100%;
+  margin: auto;
+  padding: 5rem;
+  background-size: cover;
+  background-position: center;
+  font-size: 1.5rem;
+  color: white;
+  text-align: left;
+}
+
+.content-1 {
+  background-color: rgba(150, 0, 0, 0.5);
+}
+
+.content-2 {
+  background-color: rgba(0, 150, 0, 0.5);
+}
+
+.content-3 {
+  background-color: rgba(0, 0, 150, 0.5);
+}
+
+.text-container {
+  max-width: 50ch;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
 }
