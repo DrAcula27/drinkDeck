@@ -37,9 +37,6 @@ function getDrink() {
           );
 
           // create elements, add attributes, add content
-          // const content = document.createElement('div');
-          // content.classList.add('content');
-
           const textContainer = document.createElement('div');
           textContainer.classList.add('text-container');
 
@@ -58,7 +55,6 @@ function getDrink() {
           textContainer.appendChild(heading);
           textContainer.appendChild(image);
           textContainer.appendChild(paragraph);
-          // content.appendChild(textContainer);
           slide.appendChild(textContainer);
           carouselContainer.appendChild(slide);
         });
