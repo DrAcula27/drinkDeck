@@ -20,69 +20,65 @@
   </head>
   <body>
     <h1>Drink Deck</h1>
-    <div class="carousel" data-carousel>
+    <div
+      class="carousel"
+      aria-role="group"
+      aria-roledescription="carousel"
+      aria-label="drink image"
+      data-carousel
+    >
       <div class="carouselButtons">
         <button
           class="carouselButton carouselButtonPrevious"
+          aria-label="previous slide"
           data-carousel-button-previous
         >
           <span class="fa-solid fa-circle-chevron-left"></span>
         </button>
         <button
           class="carouselButton carouselButtonNext"
+          aria-label="next slide"
           data-carousel-button-next
         >
           <span class="fa-solid fa-circle-chevron-right"></span>
         </button>
       </div>
-      <div class="slides" data-carousel-slides-container>
-        <div class="slide">
-          <div class="content">
-            <h2>Slide 1</h2>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="content">
-            <h2>Slide 2</h2>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="content">
-            <h2>Slide 3</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="carousel" data-carousel>
-      <div class="carouselButtons">
-        <button
-          class="carouselButton carouselButtonPrevious"
-          data-carousel-button-previous
+      <div
+        class="slides"
+        aria-live="polite"
+        data-carousel-slides-container
+      >
+        <div
+          class="slide"
+          aria-role="group"
+          aria-roledescription="slide"
+          aria-hidden="false"
+          aria-labelledby="heading1"
         >
-          <span class="fa-solid fa-circle-chevron-left"></span>
-        </button>
-        <button
-          class="carouselButton carouselButtonNext"
-          data-carousel-button-next
+          <div class="content">
+            <h2 id="heading1">Slide 1</h2>
+          </div>
+        </div>
+        <div
+          class="slide"
+          aria-role="group"
+          aria-roledescription="slide"
+          aria-hidden="true"
+          aria-labelledby="heading2"
         >
-          <span class="fa-solid fa-circle-chevron-right"></span>
-        </button>
-      </div>
-      <div class="slides" data-carousel-slides-container>
-        <div class="slide">
           <div class="content">
-            <h2>Slide 1</h2>
+            <h2 id="heading2">Slide 2</h2>
           </div>
         </div>
-        <div class="slide">
+        <div
+          class="slide"
+          aria-role="group"
+          aria-roledescription="slide"
+          aria-hidden="true"
+          aria-labelledby="heading3"
+        >
           <div class="content">
-            <h2>Slide 2</h2>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="content">
-            <h2>Slide 3</h2>
+            <h2 id="heading3">Slide 3</h2>
           </div>
         </div>
       </div>

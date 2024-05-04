@@ -18,12 +18,31 @@ function setUpCarousel(carousel) {
 
   function handleNextSlide() {
     currentSlide = modulo(currentSlide + 1, numberOfSlides);
-    carousel.style.setProperty('--current-slide', currentSlide);
+    changeSlide(currentSlide);
   }
 
   function handlePreviousSlide() {
     currentSlide = modulo(currentSlide - 1, numberOfSlides);
-    carousel.style.setProperty('--current-slide', currentSlide);
+    changeSlide(currentSlide);
+  }
+
+  function changeSlide(slideNumber) {
+    // change current slide visually
+    carousel.style.setProperty('--current-slide', slideNumber);
+
+    // handle screen reader accessibility
+    // here we're getting the elements for the previous slide, current slide and next slide
+    const previousSlideNumber = modulo(slideNumber - 1, numberOfSlides);
+    const nextSlideNumber = modulo(slideNumber + 1, numberOfSlides);
+    const previousSlide =
+      slidesContainer.children[previousSlideNumber];
+    const currentSlideElement = slidesContainer.children[slideNumber];
+    const nextSlide = slidesContainer.children[nextSlideNumber];
+
+    // here, we're hiding the previous and next slides and showing the current slide
+    previousSlide.setAttribute('aria-hidden', true);
+    nextSlide.setAttribute('aria-hidden', true);
+    currentSlideElement.setAttribute('aria-hidden', false);
   }
 
   function modulo(number, mod) {
