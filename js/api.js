@@ -37,9 +37,8 @@ function getDrink() {
           );
 
           // create elements, add attributes, add content
-          const content = document.createElement('div');
-          content.classList.add('content');
-          content.classList.add(`content-${index + 1}`);
+          // const content = document.createElement('div');
+          // content.classList.add('content');
 
           const textContainer = document.createElement('div');
           textContainer.classList.add('text-container');
@@ -59,8 +58,8 @@ function getDrink() {
           textContainer.appendChild(heading);
           textContainer.appendChild(image);
           textContainer.appendChild(paragraph);
-          content.appendChild(textContainer);
-          slide.appendChild(content);
+          // content.appendChild(textContainer);
+          slide.appendChild(textContainer);
           carouselContainer.appendChild(slide);
         });
 
@@ -81,7 +80,7 @@ function getDrink() {
         errorSlide.setAttribute('aria-hidden', 'false');
 
         const errorContent = document.createElement('div');
-        errorContent.classList.add('content');
+        errorContent.classList.add('text-container');
 
         const errorMessage = document.createElement('p');
         errorMessage.innerText = 'No drinks found';
