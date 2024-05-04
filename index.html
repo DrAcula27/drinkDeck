@@ -7,6 +7,11 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+    <meta name="author" content="Danielle Andrews" />
+    <meta
+      name="description"
+      content="drink deck, cocktails, NA drinks, carousel"
+    />
     <title>Drink Deck</title>
     <link
       rel="stylesheet"
@@ -15,12 +20,26 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./css/carousel.css" />
-    <script src="./js/carousel.js" defer></script>
+    <link rel="icon" type="image/png" href="./img/favicon.ico" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./css/carousel.css"
+    />
+    <script
+      defer
+      type="text/javascript"
+      src="./js/carousel.js"
+    ></script>
+    <script defer type="text/javascript" src="./js/api.js"></script>
   </head>
   <body>
-    <h1>Drink Deck</h1>
-    <div
+    <h1>What Drink Would You Like?</h1>
+    <section class="userInput">
+      <input type="text" name="" value="" />
+      <button type="button" name="button">Show Drink Options</button>
+    </section>
+    <main
       class="carousel"
       aria-role="group"
       aria-roledescription="carousel"
@@ -58,6 +77,7 @@
           <div class="content content-1">
             <div class="text-container">
               <h2 id="heading1">Slide 1</h2>
+              <img src="" alt="" />
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing
                 elit. Blanditiis, aut mollitia. Reprehenderit veniam
@@ -78,6 +98,7 @@
           <div class="content content-2">
             <div class="text-container">
               <h2 id="heading2">Slide 2</h2>
+              <img src="" alt="" />
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing
                 elit. Blanditiis, aut mollitia. Reprehenderit veniam
@@ -98,6 +119,7 @@
           <div class="content content-3">
             <div class="text-container">
               <h2 id="heading3">Slide 3</h2>
+              <img src="" alt="" />
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing
                 elit. Blanditiis, aut mollitia. Reprehenderit veniam
@@ -109,6 +131,6 @@
           </div>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>
