@@ -68,6 +68,10 @@ function getDrink() {
 
         // if no drinks are found
       } else {
+        // hide carousel buttons
+        carouselButtons.forEach((button) => {
+          button.style.display = 'none';
+        });
         // create and display an error slide
         const errorSlide = document.createElement('div');
         errorSlide.classList.add('slide');
@@ -79,7 +83,8 @@ function getDrink() {
         errorContent.classList.add('text-container');
 
         const errorMessage = document.createElement('p');
-        errorMessage.innerText = 'No drinks found';
+        errorMessage.innerText =
+          'No drinks found by that name. Make sure you spelled it correctly and try again!';
 
         errorContent.appendChild(errorMessage);
         errorSlide.appendChild(errorContent);
