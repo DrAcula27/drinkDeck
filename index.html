@@ -35,41 +35,43 @@
     <script defer type="text/javascript" src="./js/api.js"></script>
   </head>
   <body>
-    <h1>What Drink Would You Like?</h1>
-    <section class="userInput container">
-      <input type="text" name="" value="" />
-      <button type="button" name="button" class="inputButton">
-        Show Drink Options
-      </button>
-    </section>
-    <main
-      class="carousel container"
-      aria-role="group"
-      aria-roledescription="carousel"
-      aria-label="drinks"
-      data-carousel
-    >
-    <section
-        class="slides"
-        aria-live="polite"
-        data-carousel-slides-container
-      ></section>
-      <section class="carouselButtons">
-        <button
-          class="carouselButton carouselButtonPrevious"
-          aria-label="previous slide"
-          data-carousel-button-previous
-        >
-          <span class="fa-solid fa-circle-chevron-left"></span>
-        </button>
-        <button
-          class="carouselButton carouselButtonNext"
-          aria-label="next slide"
-          data-carousel-button-next
-        >
-          <span class="fa-solid fa-circle-chevron-right"></span>
+    <div class="content">
+      <h1>What Drink Would You Like?</h1>
+      <section class="user-input">
+        <input type="text" name="" value="" />
+        <button type="button" name="button" class="input-button">
+          Show Drink Options
         </button>
       </section>
-    </main>
+      <main
+        class="carousel"
+        aria-role="group"
+        aria-roledescription="carousel"
+        aria-label="drinks"
+        data-carousel
+      >
+        <section
+          class="slides"
+          aria-live="polite"
+          data-carousel-slides-container
+        ></section>
+        <section class="controls">
+          <button
+            class="control"
+            aria-label="previous slide"
+            data-carousel-button-previous
+          >
+            <span class="fa-solid fa-circle-chevron-left"></span>
+          </button>
+          <button
+            class="control"
+            aria-label="next slide"
+            data-carousel-button-next
+          >
+            <span class="fa-solid fa-circle-chevron-right"></span>
+          </button>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
