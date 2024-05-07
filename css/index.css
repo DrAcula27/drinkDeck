@@ -18,7 +18,7 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 20px;
   max-width: 800px;
   margin: 0 auto;
@@ -37,10 +37,6 @@ h1 {
 }
 
 /* USER INPUT */
-.input-container {
-  margin-bottom: 20px;
-}
-
 input[type='text'] {
   padding: 10px;
   font-size: 1.6rem;
@@ -48,6 +44,11 @@ input[type='text'] {
   border-radius: 5px;
   width: 70%;
   background-color: aliceblue;
+  color: #351a3d;
+}
+
+input[type='text']:focus {
+  outline: 3px solid #351a3d;
 }
 
 .input-button {
@@ -62,7 +63,7 @@ input[type='text'] {
 
 .input-button:hover {
   color: aliceblue;
-  background-color: #98809f;
+  background-color: #351a3d;
   border: 1px solid aliceblue;
 }
 

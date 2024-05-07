@@ -2,7 +2,6 @@
 .carousel {
   --current-slide: 0;
   position: relative;
-  overflow: hidden;
 }
 
 .slides {
@@ -15,12 +14,12 @@
   flex: 0 0 100%;
 }
 
-.text-container {
+.slide-content {
   max-width: 100ch;
   margin: auto;
   padding: 2rem;
   padding: 20px;
-  background-color: #BFB1C4;
+  background-color: #bfb1c4;
   border-radius: 5px;
   box-shadow: 4px 4px 8px rgba(78, 40, 89, 0.1);
 }
@@ -46,26 +45,23 @@ p {
 }
 
 /* CAROUSEL BUTTONS */
-.controls {
-  /* hide buttons when page first loads */
-  /* display: none; */
-  z-index: 1;
+/* .controls {
   display: flex;
   justify-content: center;
   gap: 12px;
-  /* style buttons */
   padding: 10px;
   margin: 0.5rem;
   border: none;
   border-radius: 50%;
-}
+} */
 
-.controls span {
+/* .controls span {
   font-size: 3rem;
-}
+} */
 
-.control {
-  display: flex;
+/* hide buttons when page first loads */
+/* .control {
+  display: none;
   align-items: center;
   justify-content: center;
   border-radius: 100px;
@@ -77,83 +73,15 @@ p {
   transition: transform 200ms, background-color 200ms;
   will-change: transform, background-color;
   font-size: 20px;
-}
+} */
 
-.control:hover {
+/* .control:hover {
   cursor: pointer;
   transform: scale(1.15);
   background: rgba(255, 255, 255, 0.45);
   color: rgba(53, 26, 61, 0.9);
-}
+} */
 
-.control:focus {
+/* .control:focus {
   background: rgba(255, 255, 255, 0.6);
-}
-
-.icon {
-  width: 20px;
-}
-
-.icon--play {
-  margin-right: -2px;
-}
-
-.pagination--paused ~ .controls .icon--pause,
-.pagination:not(.pagination--paused) ~ .controls .icon--play {
-  display: none;
-}
-
-.state {
-  font-size: 120px;
-  text-align: center;
-}
-
-/* PAGINATION */
-.pagination {
-  display: flex;
-  gap: 10px;
-  height: 4px;
-  min-height: 4px;
-}
-
-.pagination-item {
-  border-radius: 100px;
-  height: 100%;
-  flex: auto;
-  background: rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  border: 0;
-  cursor: pointer;
-}
-
-@keyframes progress {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-.pagination-progress {
-  flex: auto;
-  background: #333;
-  height: 100%;
-  width: 0;
-}
-
-.pagination-item--running .pagination-progress {
-  animation: progress 3s linear forwards;
-}
-
-.pagination-item--done .pagination-progress {
-  width: 100%;
-}
-
-.pagination--paused .pagination-progress {
-  animation-play-state: paused;
-}
-
-:-moz-window-inactive .pagination-progress {
-  animation-play-state: paused;
-}
+} */
