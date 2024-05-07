@@ -1,3 +1,7 @@
+// enable strict mode in JavaScript:
+// helps catch common coding mistakes and prevents the use of certain error-prone features
+'use strict';
+
 function modulo(number, mod) {
   let result = number % mod;
   if (result < 0) result += mod;
@@ -5,13 +9,11 @@ function modulo(number, mod) {
 }
 
 function setUpCarousel(carousel) {
+  let intervalId = 0;
+  let currentSlide = 0;
+
   function handleNextSlide() {
     currentSlide = modulo(currentSlide + 1, numberOfSlides);
-    changeSlide(currentSlide);
-  }
-
-  function handlePreviousSlide() {
-    currentSlide = modulo(currentSlide - 1, numberOfSlides);
     changeSlide(currentSlide);
   }
 
@@ -20,9 +22,13 @@ function setUpCarousel(carousel) {
     carousel.style.setProperty('--current-slide', slideNumber);
 
     // handle screen reader accessibility
-    const previousSlideNumber = modulo(slideNumber - 1, numberOfSlides);
+    const previousSlideNumber = modulo(
+      slideNumber - 1,
+      numberOfSlides
+    );
     const nextSlideNumber = modulo(slideNumber + 1, numberOfSlides);
-    const previousSlide = slidesContainer.children[previousSlideNumber];
+    const previousSlide =
+      slidesContainer.children[previousSlideNumber];
     const currentSlideElement = slidesContainer.children[slideNumber];
     const nextSlide = slidesContainer.children[nextSlideNumber];
 
@@ -31,24 +37,33 @@ function setUpCarousel(carousel) {
     currentSlideElement.setAttribute('aria-hidden', false);
   }
 
-  // get elements
-  const buttonPrevious = carousel.querySelector(
-    '[data-carousel-button-previous]'
-  );
-  const buttonNext = carousel.querySelector(
-    '[data-carousel-button-next]'
-  );
+  function startCarousel() {
+    intervalId = setInterval(() => {
+      handleNextSlide();
+    }, 5000);
+  }
+
+  function stopCarousel() {
+    clearInterval(intervalId);
+  }
+
   const slidesContainer = carousel.querySelector(
     '[data-carousel-slides-container]'
   );
 
-  const numberOfSlides = slidesContainer.childElementCount;
-  let currentSlide = 0;
+  let numberOfSlides = slidesContainer.childElementCount;
 
-  // set up events
-  buttonPrevious.addEventListener('click', handlePreviousSlide);
-  buttonNext.addEventListener('click', handleNextSlide);
+  slidesContainer.addEventListener('DOMNodeInserted', () => {
+    numberOfSlides = slidesContainer.childElementCount;
+  });
+
+  // automatically start the carousel if more than one slide
+  if (numberOfSlides > 1) {
+    startCarousel();
+  }
 }
 
-const carousels = document.querySelectorAll('[data-carousel]');
-carousels.forEach(setUpCarousel);
+// document.addEventListener('DOMContentLoaded', function () {
+//   const carousels = document.querySelectorAll('[data-carousel]');
+//   carousels.forEach(setUpCarousel);
+// });
