@@ -120,82 +120,94 @@ function createErrorSlide(container) {
 
 function setUpCarousel(carousel) {
   let currentSlideIndex = 0;
-  let intervalId = null; // For autoplay functionality
+  let intervalId = null;
+
   carousel.querySelectorAll('.slide')[0].classList.add('active');
 
   const showSlide = (index) => {
-    // remove the active class from all slides
     carousel
       .querySelectorAll('.slide')
       .forEach((slide) => slide.classList.remove('active'));
 
-    // add the active class to the current slide
     carousel
       .querySelectorAll('.slide')
       [index].classList.add('active');
 
-    // Update aria-hidden attributes for accessibility
     carousel.querySelectorAll('.slide').forEach((slide, i) => {
       slide.setAttribute('aria-hidden', i !== index);
     });
   };
 
-  // Function to start the carousel autoplay
-  const startCarousel = () => {
-    intervalId = setInterval(() => {
-      currentSlideIndex =
-        (currentSlideIndex + 1) %
-        carousel.querySelectorAll('.slide').length;
-      showSlide(currentSlideIndex);
-    }, 5000); // Change slide every 5 seconds
+  const showPreviousSlide = () => {
+    stopCarousel();
+    currentSlideIndex =
+      (currentSlideIndex -
+        1 +
+        carousel.querySelectorAll('.slide').length) %
+      carousel.querySelectorAll('.slide').length;
+    showSlide(currentSlideIndex);
   };
 
-  // Function to stop the carousel autoplay
+  const showNextSlide = () => {
+    stopCarousel();
+    currentSlideIndex =
+      (currentSlideIndex + 1) %
+      carousel.querySelectorAll('.slide').length;
+    showSlide(currentSlideIndex);
+  };
+
+  const startCarousel = () => {
+    intervalId = setInterval(() => {
+      showNextSlide();
+    }, 5000);
+  };
+
   const stopCarousel = () => {
     clearInterval(intervalId);
     intervalId = null;
   };
 
-  // Dynamically create carousel controls and start autoplay if there is more than one slide
   if (carousel.querySelectorAll('.slide').length > 1) {
-    // const controlsContainer = document.querySelector(
-    //   '[data-carousel-controls]'
-    // );
+    const controlsContainer = document.querySelector(
+      '[data-carousel-controls]'
+    );
 
-    // const prevButton = document.createElement('button');
-    // prevButton.textContent = 'Previous';
-    // prevButton.setAttribute('data-carousel-prev', '');
-    // prevButton.addEventListener('click', () => {
-    //   currentSlideIndex =
-    //     (currentSlideIndex -
-    //       1 +
-    //       carousel.querySelectorAll('.slide').length) %
-    //     carousel.querySelectorAll('.slide').length;
-    //   showSlide(currentSlideIndex);
-    // });
+    const prevButton = document.querySelector(
+      '[data-carousel-button-previous]'
+    );
+    const pauseButton = document.querySelector(
+      '[data-carousel-button-pause]'
+    );
+    const playButton = document.querySelector(
+      '[data-carousel-button-play]'
+    );
+    const nextButton = document.querySelector(
+      '[data-carousel-button-next]'
+    );
 
-    // const nextButton = document.createElement('button');
-    // nextButton.textContent = 'Next';
-    // nextButton.setAttribute('data-carousel-next', '');
-    // nextButton.addEventListener('click', () => {
-    //   currentSlideIndex =
-    //     (currentSlideIndex + 1) %
-    //     carousel.querySelectorAll('.slide').length;
-    //   showSlide(currentSlideIndex);
-    // });
+    if (prevButton) {
+      prevButton.classList.remove('hidden');
+      prevButton.classList.add('shown');
+      prevButton.addEventListener('click', showPreviousSlide);
+    }
 
-    // const playButton = document.createElement('button');
-    // playButton.textContent = 'Play';
-    // playButton.setAttribute('data-carousel-play', '');
-    // playButton.addEventListener('click', startCarousel());
+    if (pauseButton) {
+      pauseButton.classList.remove('hidden');
+      pauseButton.classList.add('shown');
+      pauseButton.addEventListener('click', stopCarousel);
+    }
 
-    // const pauseButton = document.createElement('button');
-    // pauseButton.textContent = 'Pause';
-    // pauseButton.setAttribute('data-carousel-pause', '');
-    // pauseButton.addEventListener('click', stopCarousel());
+    if (playButton) {
+      playButton.classList.remove('hidden');
+      playButton.classList.add('shown');
+      playButton.addEventListener('click', startCarousel);
+    }
 
-    // controlsContainer.appendChild(playButton);
-    // controlsContainer.appendChild(pauseButton);
+    if (nextButton) {
+      nextButton.classList.remove('hidden');
+      nextButton.classList.add('shown');
+      nextButton.addEventListener('click', showNextSlide);
+    }
 
     startCarousel();
   }
