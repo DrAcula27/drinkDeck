@@ -70,7 +70,7 @@ ul {
 }
 
 /* CAROUSEL BUTTONS */
-/* .controls {
+.controls {
   display: flex;
   justify-content: center;
   gap: 12px;
@@ -78,14 +78,14 @@ ul {
   margin: 0.5rem;
   border: none;
   border-radius: 50%;
-} */
+}
 
-/* .controls span {
+.controls span {
   font-size: 3rem;
-} */
+}
 
 /* hide buttons when page first loads */
-/* .control {
+.control {
   display: none;
   align-items: center;
   justify-content: center;
@@ -98,15 +98,15 @@ ul {
   transition: transform 200ms, background-color 200ms;
   will-change: transform, background-color;
   font-size: 20px;
-} */
+}
 
-/* .control:hover {
+.control:hover {
   cursor: pointer;
   transform: scale(1.15);
   background: rgba(255, 255, 255, 0.45);
   color: rgba(53, 26, 61, 0.9);
-} */
+}
 
-/* .control:focus {
+.control:focus {
   background: rgba(255, 255, 255, 0.6);
-} */
+}

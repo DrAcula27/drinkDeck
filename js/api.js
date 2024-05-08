@@ -156,32 +156,47 @@ function setUpCarousel(carousel) {
     intervalId = null;
   };
 
-  // Attach event listeners to navigation controls if they exist
-  const prevButton = carousel.querySelector('[data-carousel-prev]');
-  const nextButton = carousel.querySelector('[data-carousel-next]');
-
-  if (prevButton) {
-    prevButton.addEventListener('click', () => {
-      currentSlideIndex =
-        (currentSlideIndex -
-          1 +
-          carousel.querySelectorAll('.slide').length) %
-        carousel.querySelectorAll('.slide').length;
-      showSlide(currentSlideIndex);
-    });
-  }
-
-  if (nextButton) {
-    nextButton.addEventListener('click', () => {
-      currentSlideIndex =
-        (currentSlideIndex + 1) %
-        carousel.querySelectorAll('.slide').length;
-      showSlide(currentSlideIndex);
-    });
-  }
-
-  // Optionally, start the carousel autoplay if there are slides
+  // Dynamically create carousel controls and start autoplay if there is more than one slide
   if (carousel.querySelectorAll('.slide').length > 1) {
+    // const controlsContainer = document.querySelector(
+    //   '[data-carousel-controls]'
+    // );
+
+    // const prevButton = document.createElement('button');
+    // prevButton.textContent = 'Previous';
+    // prevButton.setAttribute('data-carousel-prev', '');
+    // prevButton.addEventListener('click', () => {
+    //   currentSlideIndex =
+    //     (currentSlideIndex -
+    //       1 +
+    //       carousel.querySelectorAll('.slide').length) %
+    //     carousel.querySelectorAll('.slide').length;
+    //   showSlide(currentSlideIndex);
+    // });
+
+    // const nextButton = document.createElement('button');
+    // nextButton.textContent = 'Next';
+    // nextButton.setAttribute('data-carousel-next', '');
+    // nextButton.addEventListener('click', () => {
+    //   currentSlideIndex =
+    //     (currentSlideIndex + 1) %
+    //     carousel.querySelectorAll('.slide').length;
+    //   showSlide(currentSlideIndex);
+    // });
+
+    // const playButton = document.createElement('button');
+    // playButton.textContent = 'Play';
+    // playButton.setAttribute('data-carousel-play', '');
+    // playButton.addEventListener('click', startCarousel());
+
+    // const pauseButton = document.createElement('button');
+    // pauseButton.textContent = 'Pause';
+    // pauseButton.setAttribute('data-carousel-pause', '');
+    // pauseButton.addEventListener('click', stopCarousel());
+
+    // controlsContainer.appendChild(playButton);
+    // controlsContainer.appendChild(pauseButton);
+
     startCarousel();
   }
 }
