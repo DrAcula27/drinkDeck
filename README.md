@@ -45,7 +45,6 @@
       <img src='./img/screenshot.PNG' alt='Drink Deck Screen Shot' />
     </a>
 </p>
-<!-- [![Drink Deck Screen Shot](./img/screenshot.PNG)](https://dracula27.github.io/drinkDeck/) -->
 
 Ever wanted to know that recipe for a certain drink?
 
