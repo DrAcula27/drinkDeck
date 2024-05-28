@@ -15,6 +15,7 @@
     Search for a drink and flip through a carousel of options!
     <br />
     <a href="https://dracula27.github.io/drinkDeck/">View Demo</a>
+  </p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -39,7 +40,12 @@
 
 ## About The Project
 
-[![Drink Deck Screen Shot](./img/screenshot.PNG)](https://dracula27.github.io/drinkDeck/)
+<p align="center">
+    <a href="https://dracula27.github.io/drinkDeck/">
+      <img src='./img/screenshot.PNG' alt='Drink Deck Screen Shot' />
+    </a>
+</p>
+<!-- [![Drink Deck Screen Shot](./img/screenshot.PNG)](https://dracula27.github.io/drinkDeck/) -->
 
 Ever wanted to know that recipe for a certain drink?
 
@@ -60,6 +66,7 @@ With this app, you can search for a drink by name (or partial name) and view all
 ## Usage
 
 Type the name, or partial name, of a drink for which you need the recipe and either type the `Enter` key or click the `Show Drink Options` button to display the drink options.
+
 - If only one drink is found, the carousel controls will not display.
 - If multiple recipes are found for that drink, the carousel controls will be displayed, and you can pause, restart, or use the arrow keys to skip ahead or go back within the carousel.
 
